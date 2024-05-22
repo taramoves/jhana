@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="path/to/logo.png" alt="Jhana Logo">
+                <span>JHANA</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Welcome</a>
+                <a href="card-selection.html">Card Selection</a>
+                <a href="card-history.html">Card History</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="card-selection-section">
+            <div class="card-display">
+                <div id="card-placeholder" class="card"></div>
+                <button id="mint-button" class="hidden">READY? MINT</button>
+            </div>
+            <div class="card-carousel">
+                <button id="prev-card">&lt;</button>
+                <div id="card-carousel-container">
+                    <!-- Placeholder cards -->
+                    <div class="carousel-card"></div>
+                    <div class="carousel-card"></div>
+                    <div class="carousel-card"></div>
+                    <div class="carousel-card"></div>
+                    <div class="carousel-card"></div>
+                </div>
+                <button id="next-card">&gt;</button>
+            </div>
+            <p>OR CHOOSE MORE. WHICH CARDS FEEL RIGHT?</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="cardGenerator.js"></script>
+</body>
+</html>

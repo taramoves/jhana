@@ -11,14 +11,11 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="path/to/logo.png" alt="Jhana Logo">
                 <span>JHANA</span>
             </div>
             <div class="nav-links">
-                <a href="index.html">Welcome</a>
-                <a href="card-selection.html">Card Selection</a>
-                <a href="card-history.html">Card History</a>
-                <a href="about.html">About</a>
+                <a href="about.html" class="nav-button">About</a>
+                <a href="card-history.html" class="nav-button">History</a>
             </div>
         </nav>
     </header>
@@ -31,12 +28,11 @@
             <div class="card-carousel">
                 <button id="prev-card">&lt;</button>
                 <div id="card-carousel-container">
-                    <!-- Placeholder cards -->
-                    <div class="carousel-card"></div>
-                    <div class="carousel-card"></div>
-                    <div class="carousel-card"></div>
-                    <div class="carousel-card"></div>
-                    <div class="carousel-card"></div>
+                    <div class="carousel-card" onclick="selectCard()"></div>
+                    <div class="carousel-card" onclick="selectCard()"></div>
+                    <div class="carousel-card" onclick="selectCard()"></div>
+                    <div class="carousel-card" onclick="selectCard()"></div>
+                    <div class="carousel-card" onclick="selectCard()"></div>
                 </div>
                 <button id="next-card">&gt;</button>
             </div>

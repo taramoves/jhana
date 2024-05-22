@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardPlaceholder = document.getElementById('card-placeholder');
     const mintButton = document.getElementById('mint-button');
     const carouselCards = document.querySelectorAll('.carousel-card');
-    
-    carouselCards.forEach((card, index) => {
+
+    carouselCards.forEach((card) => {
         card.addEventListener('click', () => {
-            selectCard(index);
+            selectCard();
         });
     });
 
@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         mintCard();
     });
 
-    function selectCard(index) {
-        cardPlaceholder.innerHTML = '<img src="path/to/placeholder-card.png" alt="Selected Card">';
+    function selectCard() {
+        cardPlaceholder.innerHTML = '<div id="p5-container"></div>';
+        new p5(sketch, 'p5-container');
         mintButton.classList.remove('hidden');
     }
 
@@ -62,4 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
         cardPlaceholder.innerHTML = `<p>${seed}</p>`;
         mintButton.classList.add('hidden');
     }
+
+    const sketch = (p) => {
+        p.setup = () => {
+            p.createCanvas(200, 300);
+            p.noStroke();
+            p.colorMode(p.HSL);
+            pickStyle();
+            p.background((petalColor+120) % 360, 100, 50);
+            let space = 50;
+            rV = p.random(0,100);
+            p.randomSeed(rV);
+            borderTime();
+            p.noStroke();
+            sunPosX = p.random(100,520);
+            sunPosY = p.random(100, 700);
+        };
+
+        p.draw = () => {
+            p.noStroke();
+            p.background((petalColor+120) % 360, 100, 50);
+            let size = 50;
+            Sun(sunPosX, sunPosY, size, sunCol);
+            drawEye();
+            let space = 50;
+            borderTime();
+            drawFlowerBorder(space);
+        };
+    };
 });

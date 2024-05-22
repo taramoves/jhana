@@ -1,0 +1,2 @@
+# jhana
+Generative Divination
